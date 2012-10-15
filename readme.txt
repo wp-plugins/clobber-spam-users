@@ -5,10 +5,10 @@ Donate link: http://www.tacticaltechnique.com/donate/
 Tags: spam, spam posts, delete users
 Requires at least: 3.0.0
 Tested up to: 3.4.2
-Stable tag: 0.121013
+Stable tag: 0.121015
 
 This plugin makes it easy to delete spam posts submitted to your website by creating a 
-dashboard called "Clobber Spam" under your Users menu.
+dashboard called "Clobber Spam" in your Users menu.
 
 == Description ==
 
@@ -64,11 +64,19 @@ I sell custom versions of all my plugins.
 
 == Change Log ==
 
+= 0.121015 =
+
+* Fixed a javascript bug that prevented the main routine from executing on checked users
+
 = 0.121013 =
 
 * First build
 
 == Upgrade Notice ==
+
+= 0.121015 = 
+
+This version is an important update because it fixes a bug
 
 = 0.121013 =
 

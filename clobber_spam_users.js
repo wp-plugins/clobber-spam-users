@@ -10,7 +10,7 @@
 	function clobber_checked_users( ){
 		var array = new Array( );
 		jQuery('input[id^="clobber-user-id-"][type="checkbox"]:checked').each(function(){
-			array.push($(this).val());
+			array.push(jQuery(this).val());
 		});
 		jQuery.post(ajaxurl, {
 			action: 'clobber_users',
