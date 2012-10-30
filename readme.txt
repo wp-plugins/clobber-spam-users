@@ -5,7 +5,7 @@ Donate link: http://www.tacticaltechnique.com/donate/
 Tags: spam, spam posts, delete users
 Requires at least: 3.0.0
 Tested up to: 3.4.2
-Stable tag: 0.121015
+Stable tag: 0.121030
 
 This plugin makes it easy to delete spam posts submitted to your website by creating a 
 dashboard called "Clobber Spam" in your Users menu.
@@ -55,14 +55,17 @@ plugins are failing to prevent.
 
 = Can you add feature X? =
 
-Send me your idea, and we can have a conversation. Of course, everything has a price, and 
-I sell custom versions of all my plugins.
+Send me your idea, and we can have a conversation.
 
 == Screenshots ==
 
 1. This is what the Clobber Spam page looks like in the administrative dashboard
 
 == Change Log ==
+
+= 0.121030 =
+
+* Added a handler for posts that are saved with no title
 
 = 0.121015 =
 
@@ -73,6 +76,10 @@ I sell custom versions of all my plugins.
 * First build
 
 == Upgrade Notice ==
+
+= 0.121030 = 
+
+This update will now display [a post saved with no title] on the clobber spam dashboard if a post is saved with no title
 
 = 0.121015 = 
 
