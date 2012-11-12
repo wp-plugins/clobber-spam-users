@@ -3,7 +3,7 @@
 Plugin Name: Clobber spam users
 Plugin URI: http://www.tacticaltechnique.com/wordpress/clobber-spam-users/
 Description: Easily delete spam post submissions and disable accounts by visiting the Clobber Spam section of your Users menu.
-Version: 0.121030
+Version: 0.121111
 Author: Corey Salzano
 Author URI: http://coreysalzano.com/
 License: GPL2
@@ -92,25 +92,26 @@ License: GPL2
 			$user_array = explode( ",", $user_ids );
 			//take some action on each of these user names
 			foreach( $user_array as $user_id ){
-				//echo("deleting user id " . $user_id );
-				//delete all their posts
-				$posts = get_posts( array(
-					'author' => $user_id,
-					'posts_per_page' => -1,
-					'post_status' => array( 'publish', 'inherit', 'pending', 'private', 'future', 'draft' )
-				));
-				foreach( $posts as $post ){
-					//echo " post# " . $post->ID . " ";
-					$deleted_post = wp_delete_post( $post->ID, true );
+				if( $user_id > 0 ){
+					//delete all their posts
+					$posts = get_posts( array(
+						'author' => $user_id,
+						'posts_per_page' => -1,
+						'post_status' => array( 'publish', 'inherit', 'pending', 'private', 'future', 'draft' )
+					));
+					foreach( $posts as $post ){
+						//echo " post# " . $post->ID . " ";
+						$deleted_post = wp_delete_post( $post->ID, true );
+					}
+					//change their password and email address
+					$user = get_user_by( 'id', $user_id );
+					$new_user_data = array(
+						'user_pass' => 'password123',
+						'ID' => $user_id,
+						'user_email' => 'username@example.com'
+					);
+					$updated_user = wp_update_user( $new_user_data );
 				}
-				//change their password and email address
-				$user = get_user_by( 'id', $user_id );
-				$new_user_data = array(
-					'user_pass' => 'password123',
-					'ID' => $user_id,
-					'user_email' => 'username@example.com'
-				);
-				$updated_user = wp_update_user( $new_user_data );
 			}
 			die( );
 		}

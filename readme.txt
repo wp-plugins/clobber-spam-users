@@ -2,10 +2,10 @@
 
 Contributors: salzano
 Donate link: http://www.tacticaltechnique.com/donate/
-Tags: spam, spam posts, delete users
+Tags: spam, spam posts, delete users, ugc, delete posts, blog spam
 Requires at least: 3.0.0
 Tested up to: 3.4.2
-Stable tag: 0.121030
+Stable tag: 0.121111
 
 This plugin makes it easy to delete spam posts submitted to your website by creating a 
 dashboard called "Clobber Spam" in your Users menu.
@@ -63,6 +63,11 @@ Send me your idea, and we can have a conversation.
 
 == Change Log ==
 
+= 0.121111 = 
+
+* Added a javascript alert for users that click the Clobber button before checking any users
+* Added a conditional to the loop that deletes posts to make sure a user ID is provided
+
 = 0.121030 =
 
 * Added a handler for posts that are saved with no title
@@ -76,6 +81,10 @@ Send me your idea, and we can have a conversation.
 * First build
 
 == Upgrade Notice ==
+
+= 0.121111 = 
+
+A user left a bad review and identified a bug in this plugin that deleted posts he did not want to delete. I believe he was clicking the Clobber Users button without checking any users on the page, and this plugin would then delete every post from the database. It no longer does that!
 
 = 0.121030 = 
 

@@ -12,10 +12,14 @@
 		jQuery('input[id^="clobber-user-id-"][type="checkbox"]:checked').each(function(){
 			array.push(jQuery(this).val());
 		});
-		jQuery.post(ajaxurl, {
-			action: 'clobber_users',
-			user_ids: array.join(",")		
-		}, function(data) {
-			load_clobber_user_table( );
-		});
+		if( array.length ){
+			jQuery.post(ajaxurl, {
+				action: 'clobber_users',
+				user_ids: array.join(",")		
+			}, function(data) {
+				load_clobber_user_table( );
+			});
+		} else{
+			alert("Check some users to clobber before clicking the button.");
+		}
 	}
